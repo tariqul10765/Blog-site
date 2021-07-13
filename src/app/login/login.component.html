@@ -1,0 +1,42 @@
+<app-header></app-header>
+<mat-card>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="name_field">
+
+        <div class="email_field">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Email" type="email" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field> <!-- End material field for email-->
+
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required*</div>
+            <div *ngIf="f.email.errors.email">Invalid email address</div>
+          </div> <!-- End error message for email-->
+
+        </div> <!-- End email_field-->
+
+
+        <div class="password_field">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter Password" type="password" formControlName="password">
+            <mat-icon matSuffix>password</mat-icon>
+            <mat-error></mat-error>
+          </mat-form-field> <!-- End material field for password-->
+
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required*</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+          </div> <!-- End error message for password-->
+
+        </div> <!-- End password_field-->
+
+
+        <button mat-raised-button color="primary">Login</button>
+      </div>
+    </form>
+</mat-card>
+
+

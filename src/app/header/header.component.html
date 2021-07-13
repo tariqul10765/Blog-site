@@ -1,0 +1,20 @@
+<mat-toolbar>
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>menu</mat-icon>
+     <mat-menu #menu="matMenu">
+      <button mat-menu-item (click) = "postCategory('sports')" routerLink = "/posts">sports</button>
+      <button mat-menu-item (click) = "postCategory('international')" routerLink = "/posts">international</button>
+      </mat-menu>
+   </button> -->
+   <span id="logo" routerLink = '/home'>Blog Site</span>
+   <span class="mid-space" id="to-address">Good Afternoon</span>
+   <span class="example-spacer"></span>
+   <span><button mat-button routerLink = '/login' *ngIf="!authService.loggedIn()">Login</button></span>
+   <span><button mat-button routerLink = '/registration' *ngIf="!authService.loggedIn()">Registration</button></span>
+   <span><button mat-button *ngIf="authService.loggedIn()" [matMenuTriggerFor]="menu">{{userProfileName}}</button></span>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink = '/create-post'>Create Post</button>
+    <button mat-menu-item routerLink = '/my-posts'>My Posts</button>
+    <button mat-menu-item (click)="authService.loggedOut()">Logout</button>
+  </mat-menu>
+</mat-toolbar>

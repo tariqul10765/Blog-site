@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="container">
+
+  <form #heroForm="ngForm" (ngSubmit)="onSubmit(heroForm)">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Enter Title" name="title" [(ngModel)]="formData.title" required>
+      <mat-error>This field must be required</mat-error>
+    </mat-form-field>
+
+
+<!--    <div class="center">-->
+<!--      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"-->
+<!--                     (change)="onFileSelect($event)" name="img" [(ngModel)]="formData.img"-->
+<!--                     (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">-->
+<!--        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">-->
+
+<!--          <button type="button" id="pickerBtn" (click)="openFileSelector()" >+</button>-->
+<!--        </ng-template>-->
+<!--      </ngx-file-drop>-->
+<!--      <div class="upload-table">-->
+<!--        <table class="table">-->
+<!--          <tbody class="upload-name-style">-->
+<!--          <tr *ngFor="let item of files; let i=index">-->
+<!--            <td><strong>{{ item.relativePath }}</strong></td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div id="imageUpload">
+      <input type="file" (change)="onFileSelect($event)" name="img" [(ngModel)]="formData.img">
+    </div>
+
+<!--    <mat-form-field appearance="fill" class="half-width">-->
+<!--      <mat-label>Category</mat-label>-->
+<!--      <mat-select>-->
+<!--        <mat-option value="one">First option</mat-option>-->
+<!--        <mat-option value="two">Second option</mat-option>-->
+<!--      </mat-select>-->
+<!--&lt;!&ndash;      <input matInput placeholder="Enter Category" name="category" [(ngModel)]="formData.category" required>&ndash;&gt;-->
+<!--      <mat-error>This field must be required</mat-error>-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field appearance="fill" class="half-width">-->
+<!--      <mat-label>Select</mat-label>-->
+<!--      <mat-select>-->
+<!--        <mat-option value="one">First option</mat-option>-->
+<!--        <mat-option value="two">Second option</mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <input matInput placeholder="Category" name="category" [(ngModel)]="formData.category">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Short Description</mat-label>
+      <input matInput placeholder="Enter Short Description" name="shortDes" [(ngModel)]="formData.shortDes" required>
+      <mat-error>This field must be required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput required name="content" [(ngModel)]="formData.content"></textarea>
+    </mat-form-field>
+
+<!--    <ngx-quilljs placeholder = 'sd' [(ngModel)]="formData.content" name="content"></ngx-quilljs>-->
+
+    <button mat-raised-button color="accent">Create Post</button>
+  </form>
+</div>
+
+

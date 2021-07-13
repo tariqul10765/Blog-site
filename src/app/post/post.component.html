@@ -1,0 +1,37 @@
+
+    <!-- <mat-accordion>
+
+
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{post.title}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{post.description}}</p>
+          <mat-action-row>
+            <button mat-button color="primary" [routerLink] = "['/post-details',post._id]">Details</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion> -->
+
+<div class="container">
+  <div id="post-container">
+
+    <mat-card class="post" *ngFor = 'let post of posts'>
+      <div class="meta">
+
+        <h4>{{post.author}}</h4>
+        <p class="published_time">Published at {{post.updatedAt | date: 'shortDate'}}</p>
+
+        <h3 [routerLink]="['/post-details', post._id]">{{post.title}}</h3>
+        <p>{{post.shortDes}}</p>
+      </div>
+      <img src="{{post.img}}" alt="">
+    </mat-card>
+
+  </div>
+</div>
+
+

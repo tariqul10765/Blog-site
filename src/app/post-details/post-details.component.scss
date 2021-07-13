@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  padding-bottom: 300px;
+}
+#post-header{
+    text-align: left;
+    line-height: 2rem;
+    margin: 50px 0px;
+
+    h2,h4,p{
+        margin: 0px;
+    }
+}
+#info{
+    display: flex;
+    gap: 1rem;
+}
+
+#des{
+    text-align: justify;
+    padding: 0px 400px;
+    line-height: 2rem;
+}
+
+//for comment section
+.comments{
+  margin-left: -300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  mat-form-field{
+    width: 400px;
+  }
+}
+.show-comments{
+  margin-left: -525px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  mat-card{
+    width: 100%;
+  }
+}

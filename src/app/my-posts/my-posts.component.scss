@@ -1,0 +1,18 @@
+.container{
+  padding: 0px 200px;
+}
+.post{
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  img{
+    width: 300px;
+    height: 200px;
+  }
+}
+.published_time{
+  font-size: 12px;
+  margin-top: -15px;
+}

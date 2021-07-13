@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container">
+    <div id="post-header">
+        <div id="title">
+            <h2>{{singlePost.title}}</h2>
+        </div>
+        <div id="info">
+            <h4>{{singlePost.author}}</h4>
+            <p>{{singlePost.updatedAt | date: 'shortDate'}}</p>
+        </div>
+    </div>
+    <div id="img">
+        <img src="{{singlePost.img}}" alt="">
+    </div>
+    <div id="des">
+        <p>{{singlePost.content}}</p>
+    </div>
+
+  <div class="comments">
+    <mat-form-field appearance="outline">
+      <mat-label>Write your comment here</mat-label>
+      <input #comment matInput placeholder="Comment">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="postComment(comment)">Comment</button>
+  </div>
+  <div class="show-comments">
+    <mat-card>
+      <h3>Tariqul</h3>
+      <p>hello</p>
+    </mat-card>
+    <mat-card>
+      <h3>shihab</h3>
+      <p>This is my comment</p>
+    </mat-card>
+    <mat-card>
+      <h3>Sonia</h3>
+      <p>This is my comment</p>
+    </mat-card>
+  </div>
+</div>
+
